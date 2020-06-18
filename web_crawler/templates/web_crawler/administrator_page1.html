@@ -1,0 +1,83 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/admin_style.css' %}">
+<title> Administrator Page</title>
+</head>
+
+<script type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<body>
+<!-- image logo -->
+<div class="image"><img src="{% static 'images/sac-state-logo.png' %}" alt="Sac State Logo" width="150" height="150"> </div>
+<div class="links"> <a href="/">Home</a>      <a href="about.html">About Us</a>
+	<a href="../regular_page/">Regular</a></div>
+<div class="titleborder"><h1>C.R.A.W.L</h1></div>
+<div class="logo"><img src="{% static 'images/crawler.png' %}" style="width: 50px"></div>
+<div class="logout"><a href="/"><button>Log out</button></a></div>
+<hr class="new1">
+
+<div class="searchlabel"><h1>Search Level:</h1></div>
+<div class="searchvalue"><h1>Administrator</h1></div>
+
+
+	<div class="left-box">
+		<h2>Advanced Search</h2>
+		<label for="allwords">All of these words</label>
+		<input type="text" id="allwords" name="allwords" size="30">
+		<label for="phrase">This exact phrase</label>
+		<input type="text" id="phrase" name="phrase" size="30">
+		<label for="anywords">Any of these words</label>
+		<input type="text" id="anywords" name="anywords" size="30">
+		<label for="nowords">None of these words</label>
+		<input type="text" id="nowords" name="nowords" size="30">
+		<p>Date</p>
+		<label for="fromdate">From</label>
+		<input type="date" id="fromdate" name="fromdate" size="30">
+		<div class="right-date">
+			<label for="todate">To</label>
+			<input type="date" id="todate" name="todate" size="30">
+		</div>
+		<div class="searchsubjectalign">
+			<label for="subject">Search Subject</label>
+			
+			<select id="subject">		
+				<option value="news">Campus News</option>
+				<option value="students">Students</option>
+				<option value="classes">Classes</option>
+				<option value="administrators">Administrators</option>
+				<option value="professors">Professors</option>
+			</select>
+		</div>
+		<div class="searchbuttons">
+			<button id="crawlButton">Search</button>
+			<button>Clear</button>
+		</div>
+		
+		<div class="output_box_align">
+			<!-- create a function to output results here -->
+		</div>
+		<div class="resultlabel"><h2>Results</h2></div>
+		<div class="rectangle" id="crawlOutput" style="color: black; overflow: scroll; padding-left: 10px"> </div>
+		<div class="resultback"><button>Back</button></div>
+		<div class="resultnext"><button>Next</button></div>
+	</div>
+	<br> <br>
+
+<script>
+    $("#crawlButton").click(function() {
+    	var search_word = $("#allwords").val();
+    	$.ajax({
+			type: "POST",
+			url: '/output/',
+			data: {"search_word": search_word},
+			success: function(result){
+				$("#crawlOutput").html(result);
+			}
+	    });
+	    
+	});
+</script>
+
+</body>
+</html>

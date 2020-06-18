@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <title>C.R.A.W.L Homepage</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/button.css' %}">
+    <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+    <style>
+        .divBody {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .body-left {
+            margin-right: 10px;
+            flex: 2;
+        }
+        
+        .body-right {
+            margin-left: 10px;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body class="color2">
+    <div id="header">
+        <div class="logo">
+            <img src="{% static 'images/crawler.png' %}" style="width: 50px">
+            <h1>C.R.A.W.L</h1>
+        </div>
+        <hr class="new1">
+    </div>
+    <div class="divBody centerContent">
+        <div class="body-left">
+            <div class="info-box">
+                
+                <!-- Horizonal line break -->
+                
+                <h2>Introduction</h2>
+<div class="greenbox">
+                <p>Welcome to C.R.A.W.L. <b><i>Configured Real-Time Application Web Lurker.</i></b></p>
+                <p>The purpose of this web application is to help Sac State users find information that's relevant to their needs on Reddit. This will help users who want to research more information from Reddit without having to through millions of posts
+                    is what “C.R.A.W.L” can do best.</p>
+</div>
+                <br>
+                <h2>Why use CRAWL?</h2>
+
+               <div class="greenbox">
+                    <div class="b">
+                        <!--<p>With CRAWL you can use it for if you're:</p>-->
+                        <p>Following ways you can use CRAWL:</p>
+                        <dd>
+                            <li>A University trying to collect data from students participating in forums</li>
+                            <li>A Professor curious about real, honest reviews about your classes</li>
+                            <li>A Sac State student wondering about the difficulty of a certain class</li>
+                            <li>Curious about Sac State News</li>
+                            <li>Trying to report real-time posts about incidents on campus</li>
+                        </dd>
+                        <p>More important aspects of CRAWL:</p>
+
+                        <dd>
+                            <li>Different levels of CRAWL depending on account type of user. (ie. student, professor, administrator)</li>
+                            <li>Advanced search functions are provided to all users to simplify their searches.</li>
+                            <li>Varies on the user access level of CRAWL. (Higher level = most advanced functions available.) (Lower level = only basic advanced search functions available.)</li>
+                            <li>Examples of Advanced search functions: From and To dates, search topics, additional keywords to simplify the general searches.</li>
+                        </dd>
+                    </div>
+               </div> 
+
+            </div>
+        </div>
+		<script>
+		function check1()
+		{
+			var str_email = email.value;
+			var str_password = password.value;
+			if (str_email == "email3" && str_password == "aaa") {
+
+				<!-- goAdmin() -->
+				<!-- document.getElementById("email").innerText="Correct!" -->
+				location.replace("https://www.w3schools.com")
+			}
+			else
+			{
+				alert("Incorrect email and/or password. Please try again");
+			}
+		}
+		
+		function goAdmin()
+		{
+			<!-- location.replace('administrator_page1.html') -->
+			location.replace("https://www.w3schools.com");
+		}
+	</script>
+        <div class="body-right">
+
+		   <!-- <h2>Log in here to a web crawler page with an access level:</h2> -->
+		   <h2>Log in: </h2>
+			<div class="greenbox1">
+				<form>
+					<div class="b">
+					   </body> <label for="email">Email:</label>
+						<input type="text" id="email" name="email" size="40"><br><br>
+
+						<label for="pwd">Password:</label>
+						<input type="password" id="pwd" name="pwd" size="40"> <br><br>
+
+						<button class="login"><a href="admin_page">Login</a></button>
+
+						<br><br>
+
+						<a href="pass_forgot" class="2">Forgot Password</a>
+
+
+
+
+
+					</div>
+
+				</form>
+			</div>
+
+           <!-- <h2>Try out the web crawler demo yourself!</h2> -->
+            <h2>Try out!</h2>
+            <button class="button" style="right"> <a href="default_crawler"><span>CRAWL </span></a></button>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
